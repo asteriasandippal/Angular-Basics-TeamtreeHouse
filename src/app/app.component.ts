@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Math } from 'core-js/library/web/timers';
 
 @Component({
     selector: 'app-root',
@@ -7,8 +8,11 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-    emoji: string[];
-    constructor() {
-        this.emoji = ['😁', '😋', '🤩', '😝'];
+    emoji = ['😁', '😋', '🤩', '😝'];
+    activeEmoji: string;
+    changeEmoji() {
+        // Not Working Math.floor();
+        // const number = Math.floor(Math.random() * 11);
+        this.activeEmoji = this.emoji[2];
     }
 }
